@@ -1,0 +1,54 @@
+Environment Setup:
+
+Node.js:
+
+Ensure Node.js is installed. If not, download and install it from Node.js official website.
+Check the installation with node -v and npm -v commands.
+Clone Repository:
+
+
+git clone https://github.com/your-username/your-repo.git
+cd your-repo
+Install Dependencies:
+
+
+npm install
+Database Setup:
+
+PostgreSQL:
+
+Install PostgreSQL on your local machine if not already installed.
+Create a database (e.g., DPP).
+Update the PostgreSQL connection details in the project's database configuration.
+Database Schema:
+
+Run the create table queries for your database schema.
+Modify the queries according to your requirements.
+Run the Server Locally:
+
+Start the server:
+
+npm start
+The server should be running at http://localhost:3000 or another specified port.
+API Calls:
+
+GET /users:
+
+Make a GET request to retrieve orders for the authenticated user.
+
+curl http://localhost:3000/users
+POST /orders:
+
+Make a POST request to place an order.
+
+curl -X POST -H "Content-Type: application/json" -d '{"userId": 1, "movieId": 123, "deliveryDate": "2023-01-01", "deliveryAgentId": 456}' http://localhost:3000/orders
+POST /pickups:
+
+Make a POST request to schedule a pickup.
+
+curl -X POST -H "Content-Type: application/json" -d '{"pickupDate": "2023-01-02", "orderId": 1, "pickupAgentId": 789, "userId": 1}' http://localhost:3000/pickups
+
+Testing:
+
+Run tests using Jest:
+npm test
